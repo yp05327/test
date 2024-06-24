@@ -8,6 +8,6 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Docker build push
-        uses: ./.gitea/actions/action-docker-build-push
+        uses: ./.github/actions/action-docker-build-push
 
       - run: echo The end
