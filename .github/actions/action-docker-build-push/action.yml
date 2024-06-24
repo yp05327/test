@@ -10,14 +10,15 @@ runs:
   using: 'composite'
   steps:
     - run: "echo a: Set up QEMU"
-
+      shell: bash
     - run: |
         sleep 10
         echo 'sleep 10 end'        
-
+      shell: bash
     - run: "echo b: Login to DockerHub"
       if: ${{ inputs.password != '' }}
-
+      shell: bash
     - run: |
         sleep 10
         echo 'c: Set up Docker BuildX' 
+      shell: bash
