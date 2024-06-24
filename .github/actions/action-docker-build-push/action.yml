@@ -1,0 +1,23 @@
+name: 'Docker build and push'
+description: 'Setup docker, build image and push'
+
+inputs:
+  password:
+    description: 'Password or personal access token used to log against the Docker registry'
+    required: false
+
+runs:
+  using: 'composite'
+  steps:
+    - run: "echo a: Set up QEMU"
+
+    - run: |
+        sleep 10
+        echo 'sleep 10 end'        
+
+    - run: "echo b: Login to DockerHub"
+      if: ${{ inputs.password != '' }}
+
+    - run: |
+        sleep 10
+        echo 'c: Set up Docker BuildX' 
